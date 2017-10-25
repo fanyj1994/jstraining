@@ -13,14 +13,19 @@
     constructor(...args) {
       super(...args);
       this.state = {
-        text: 'World'
+        text: 'World',
+        isClicked: false
       };
     }
 
     handleClick() {
+      let d = new Date()
+      let time = d.getFullYear() + '年' + parseInt(d.getMonth() + 1) + '月' + d.getDate() + '日'
+      let isClicked = !this.state.isClicked
       this.setState({
-        text: 'Clicked'
-      });
+        isClicked,
+        text: isClicked ? time : 'World'
+      })
     }
 
     render() {
