@@ -43,10 +43,19 @@
         return <span>Error: {this.state.error}</span>;
       } else {
         /* 你的代码填入这里 */
+        let results = []
+        this.state.data.items.forEach(item => {
+          var repo = <li><a href={item.html_url}>{item.name}</a></li>
+          results.push(repo)
+        })
+        console.log(results)
         return (
           <div>
             <p>API 数据获取成功</p>
-            <p>改写代码，将结果显示在这里</p>
+            <h1>Github 上 Star 最多前 30 个的 JS 项目</h1>
+            <ul>
+              <li>{results}</li>  
+            </ul>
           </div>
         );
       }
