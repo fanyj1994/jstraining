@@ -1,7 +1,7 @@
 var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
-
+// app-parser 用来将 HTTP 请求的头部信息进行解析
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var port = process.env.PORT || 8080;
@@ -17,7 +17,7 @@ router.get('/:name', function(req, res) {
 
 router.post('/', function (req, res) {
   var name = req.body.name;
-  res.json({message: 'Hello ' + name});
+  res.json({message: 'Hello' + name});
 });
 
 app.use('/home', router);

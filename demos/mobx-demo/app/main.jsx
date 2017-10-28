@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 
 import Store from './store';
 
-@observer
+@observer  // 装饰器， 整个 APP 组件是一个观察者，只要 @observable(被观察的属性) 变化，整个组件都会更新
 class App extends React.Component {
   render() {
     return (
@@ -22,6 +22,6 @@ class App extends React.Component {
 const store = new Store();
 
 ReactDOM.render(
-  <App store={store} />,
+  <App store={store} />, // 把整个 Store 树用属性传给组件调用
   document.body.appendChild(document.createElement('div'))
 );

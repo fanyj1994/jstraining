@@ -12,8 +12,8 @@ function mapStateToProps(state) {
 // Map Redux actions to component props
 function mapDispatchToProps(dispatch) {
   return {
-    onChange: (e) => dispatch({
-      type: 'change',
+    onchange: (e) => dispatch({
+      type: 'changeInputValue',
       payload: e.target.value
     })
   }
